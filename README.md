@@ -66,22 +66,6 @@ Ensure you have a webcam configured on your system.
 
 Run `recognizewithcam.py` to start the face recognition service.
 
-### Running with Saved Video
-
-1. Save a video file using a webcam or download a publicly available video.
-
-2. Use FFmpeg to extract frames:
-    ```bash
-ffmpeg -i input.mp4 output/frame_%04d.jpg
-```
-3. Extract face embeddings
-    ```bash
-python embeddings.py --input-path output/
-```
-4. Recognize faces in the video:
-    ```bash
-python recognizewithcam.py --input-path output/
-```
 
 **Contributing**
 ---------------
