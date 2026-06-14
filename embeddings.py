@@ -25,6 +25,10 @@ for person in os.listdir(DATASET):
         result = model(img)
 
         box = result[0].boxes[0]
+        if len(result[0].boxes) == 0:
+            print("No face found:", img_path)
+            continue
+            
         x1, y1, x2, y2 = map(int, box.xyxy[0])
 
         faceimg = result[0].orig_img[y1:y2, x1:x2]
