@@ -43,7 +43,11 @@ while True:
                 min_dist = dst
                 index = i
 
-        name = known_labels[index]
+        # name = known_labels[index]
+        if index != -1 and min_dist < 0.9:
+            name = known_labels[index]
+        else:
+            name = "Unknown"
 
         cvzone.putTextRect(img, name, (x1, y1-10))
 
